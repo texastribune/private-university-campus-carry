@@ -1,0 +1,77 @@
+.header-container {
+  @include mq($from: small-break, $until: medium-break) {
+    @include create-column(10);
+    @include create-column-offset(1);
+  }
+
+  @include mq($from: medium-break) {
+    @include create-column(8);
+    @include create-column-offset(2);
+  }
+}
+
+.headline {
+  @include font-size(30);
+  font-family: $font-serif;
+  line-height: 1.1;
+  margin-bottom: $gutter;
+
+  @include mq($from: medium-break) {
+    @include font-size(38);
+  }
+}
+
+.credit {
+  @include font-size(13);
+  color: $color-secondary;
+  line-height: 1.5;
+  margin-bottom: $gutter;
+}
+
+.credit__author {
+  font-weight: 700;
+}
+
+.prose {
+  margin-bottom: $gutter-double;
+
+  > p {
+    @include font-size(18);
+    font-family: $font-serif;
+    line-height: 1.4;
+    margin-bottom: $gutter;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include mq($from: small-break, $until: medium-break) {
+    @include create-column(10);
+    @include create-column-offset(1);
+  }
+
+  @include mq($from: medium-break) {
+    @include create-column(8);
+    @include create-column-offset(2);
+  }
+}
+
+.disclosure {
+  @include font-size(16);
+  color: $color-secondary;
+  font-family: $font-serif;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: $gutter-double;
+
+  @include mq($from: small-break, $until: medium-break) {
+    @include create-column(10);
+    @include create-column-offset(1);
+  }
+
+  @include mq($from: medium-break) {
+    @include create-column(8);
+    @include create-column-offset(2);
+  }
+}

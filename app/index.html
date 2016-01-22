@@ -1,0 +1,94 @@
+{% extends "base.html" %}{% from "includes/macros.html" import email, facebook, status, twitter %}
+
+{% block content %}
+
+<main role="main">
+
+<div class="container">
+  <header class="header-container text-center">
+    <h1 class="headline">{{ data.universities.META.title|widont }}</h1>
+    <p class="credit">By <a class="credit__author" href="http://www.texastribune.org/about/staff/matthew-watkins/">Matthew Watkins</a> and <a class="credit__author" href="http://www.texastribune.org/about/staff/ryan-murphy/">Ryan Murphy</a> | Last updated: Jan. 14, 2016</p>
+    <ul class="share-cells">
+      <li class="share-cells__cell">
+        <a class="share-cells__link" href="{{ twitter(data.PATH_FULL, 'Private schools have until 8/1 to decide whether to opt out of the campus carry law. Where each school stands:') }}"><img class="share-cells__icon" src="{{ data.PATH_PREFIX }}assets/images/twitter.svg" alt="Twitter"> Tweet</a>
+      </li>
+      <li class="share-cells__cell">
+        <a class="share-cells__link" href="{{ facebook(data.PATH_FULL, data.PATH_FULL) }}"><img class="share-cells__icon" src="{{ data.PATH_PREFIX }}assets/images/facebook.svg" alt="Facebook"> Recommend</a>
+      </li>
+      <li class="share-cells__cell">
+        <a class="share-cells__link" href="{{ email('Where Texas’ Private Universities Stand on Campus Carry | The Texas Tribune', data.PATH_FULL) }}"><img class="share-cells__icon" src="{{ data.PATH_PREFIX }}assets/images/envelope.svg" alt="Send"> Email</a>
+      </li>
+    </ul>
+  </header>
+</div>
+
+<article>
+  <div class="container">
+    <div class="prose">
+      {{ data.universities.META.prose }}
+    </div>
+  </div>
+
+  <aside class="ad-slot">
+    <div id="ad-banner-leader"></div>
+  </aside>
+
+<div class="container">
+
+  <div class="jumper">
+    <p class="jumper__prompt">Jump to a university:</p>
+    <select class="jumper__select" id="js-jumper">
+        <option value="">---</option>
+      {% for university in data.universities.UNIVERSITIES %}
+        <option value="{{ university.university|slugify|lower }}">{{ university.university }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <section class="content">
+  {% for university in data.universities.UNIVERSITIES %}
+  <div class="university">
+    <header class="university__header {% if university.quote %}university__header--push{% endif %}" id="{{ university.university|slugify|lower }}">
+      <h2 class="university__name">{{ university.university }}</h2>
+      <p class="university__location">{{ university.city }}</p>
+      <p class="university__status university__status--{{ university.campus_carry_banned }}">{{ status(university.campus_carry_banned) }}</p>
+    </header>
+    {% if university.quote %}
+    <blockquote class="university__blockquote">
+      <p class="university__quote">{{ university.quote }}</p>
+      {% if university.quote_author %}<cite class="university__citation">{{ university.quote_author }} {% if university.story_credit %}(via <a href="{{ university.story_url }}">{{ university.story_credit }}</a>){% endif %}</cite>{% endif %}
+    </blockquote>
+    {% endif %}
+  </div>
+  {% endfor %}
+  </section>
+  <div class="disclosure">
+    {{ data.universities.META.disclosure }}
+  </div>
+</article>
+</div>
+
+</main>
+
+<aside class="ad-slot">
+  <div id="ad-banner-footer"></div>
+</aside>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__copyright">&copy; 2015 <a class="footer__link" href="http://www.texastribune.org/">The Texas Tribune</a></div>
+    <nav class="footer__nav">
+      <ul>
+        <li class="footer__nav-item"><a class="footer__link" href="http://www.texastribune.org/about/">About Us</a></li>
+        <li class="footer__nav-item"><a class="footer__link" href="http://www.texastribune.org/contact/">Contact Us</a></li>
+        <li class="footer__nav-item"><a class="footer__link" href="http://www.texastribune.org/support-us/donors-and-members/">Who Funds Us?</a></li>
+        <li class="footer__nav-item"><a class="footer__link" href="http://www.texastribune.org/terms-of-service/">Terms of Service</a></li>
+        <li class="footer__nav-item"><a class="footer__link" href="http://www.texastribune.org/ethics/">Code of Ethics</a></li>
+        <li class="footer__nav-item"><a class="footer__link" href="http://www.texastribune.org/privacy/">Privacy Policy</a></li>
+        <li class="footer__nav-item"><a class="footer__link--donate" href="https://www.texastribune.org/join/">Donate</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+{% endblock %}

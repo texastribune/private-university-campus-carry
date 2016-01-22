@@ -1,0 +1,13 @@
+.masthead {
+  background-color: $color-primary;
+  padding-bottom: $gutter-half;
+  padding-top: $gutter-half;
+}
+
+.masthead--center {
+  text-align: center;
+}
+
+.tribune-logo {
+  @include site-logo-height(20);
+}

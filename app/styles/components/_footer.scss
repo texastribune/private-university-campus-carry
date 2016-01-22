@@ -1,0 +1,60 @@
+.footer {
+  @include font-size(14);
+  background-color: $color-primary;
+  color: $color-text-inverse;
+  letter-spacing: .03em;
+  padding-bottom: $gutter-half;
+  padding-top: $gutter;
+
+  @include mq($from: footer-break) {
+    @include font-size(12);
+    padding-top: $gutter-half;
+  }
+}
+
+.footer__copyright {
+  margin-bottom: $gutter;
+  text-align: center;
+
+  @include mq($from: footer-break) {
+    float: left;
+    margin-bottom: 0;
+    text-align: left;
+  }
+}
+
+.footer__nav {
+  @include mq($from: footer-break) {
+    float: right;
+  }
+}
+
+.footer__nav-item {
+  @include mq($until: footer-break) {
+    @include create-column(6);
+    margin-bottom: $gutter;
+    text-align: center;
+
+    &:last-child {}
+  }
+
+  @include mq($from: footer-break) {
+    border-left: 1px solid $color-text-inverse;
+    float: left;
+    padding-left: .5rem;
+    padding-right: .5rem;
+
+    &:first-child {
+      border-left: 0;
+    }
+  }
+}
+
+.footer__link {
+  color: $color-text-inverse;
+}
+
+.footer__link--donate {
+  color: $color-link;
+  font-weight: 800;
+}

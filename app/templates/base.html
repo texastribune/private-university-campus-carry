@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% include "includes/meta.html" %}
+  <title>{% if data.universities.META.title %}{{ data.universities.META.title }} | The Texas Tribune{% else %}The Texas Tribune{% endif %}</title>
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create', 'UA-9827490-1', 'auto');ga('send', 'pageview');var googletag = googletag || {};googletag.cmd = googletag.cmd || [];</script>
+  <link rel="stylesheet" href="{{ data.PATH_PREFIX }}styles/main.css">
+  <script async src='//www.google-analytics.com/analytics.js'></script>
+  <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "{{ data.universities.META.title }}",
+        "url": "{{ data.PATH_FULL }}",
+        "thumbnailUrl": "{{ data.universities.META.facebook_image_url }}",
+        "dateCreated": "2016-01-12T06:00:00-06:00",
+        "articleSection": "FRONT PAGE, GOVERNMENT, LAW & ORDER, Legislature, Higher Education",
+        "creator": ["Matthew Watkins, Ryan Murphy"]
+      }
+  </script>
+</head>
+<body>
+
+<header class="masthead masthead--center" role="banner">
+<div class="container">
+  <a href="http://www.texastribune.org/">
+    <img class="tribune-logo" src="{{ data.PATH_PREFIX }}assets/images/tribune-white.svg" alt="The Texas Tribune">
+  </a>
+</div>
+</header>
+
+<div class="menu-container">
+  <div class="menu-scroll">
+    <nav id="menu-nav" class="menu-nav">
+      <ul>
+        <li class="menu-nav__item"><a class="menu-nav__link" href="http://www.texastribune.org/">Front Page</a></li>
+        <li class="menu-nav__item"><a class="menu-nav__link" href="http://www.texastribune.org/2016/">2016 Coverage</a></li>
+        <li class="menu-nav__item"><a class="menu-nav__link" href="http://www.texastribune.org/directory/">Directory</a></li>
+        <li class="menu-nav__item"><a class="menu-nav__link" href="http://www.texastribune.org/events/">Events</a></li>
+        <li class="menu-nav__item"><a class="menu-nav__link" href="http://www.texastribune.org/subscribe/">Newsletters</a></li>
+      </ul>
+    </nav>
+  </div>
+  <button id="menu-button" class="menu-button"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 16 16"><path class="menu-button-icon" d="M1 3h14v3h-14zM1 7h14v3h-14zM1 11h14v3h-14z"></path></svg> Menu</button>
+</div>
+
+  {% block content %}{% endblock %}
+
+{% include "includes/parsely.html" %}
+<script src="{{ data.PATH_PREFIX }}scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+{
+  "private": true,
+  "config": {
+    "s3_bucket": "apps.texastribune.org",
+    "slug": "private-university-campus-carry"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.21",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "browser-sync": "^2.10.1",
+    "bs-fullscreen-message": "^1.0.1",
+    "copytext": "^1.1.0",
+    "del": "^2.2.0",
+    "googleapis": "^2.1.7",
+    "gulp": "^3.9.0",
+    "gulp-cache": "^0.4.1",
+    "gulp-cssnano": "^2.0.1",
+    "gulp-gzip": "^1.2.0",
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-if": "^2.0.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-newer": "^1.1.0",
+    "gulp-postcss": "^6.0.1",
+    "gulp-rev": "^6.0.1",
+    "gulp-rev-replace": "^0.4.3",
+    "gulp-sass": "^2.1.1",
+    "gulp-size": "^2.0.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "nunjucks": "^2.2.0",
+    "quaff": "^1.1.0",
+    "run-sequence": "^1.1.5",
+    "sass-mq": "^3.3.0-beta.3",
+    "slug": "^0.9.1",
+    "strip-ansi": "^3.0.0",
+    "vinyl-map": "^1.0.1",
+    "webpack": "^1.12.9",
+    "webpack-dev-middleware": "^1.4.0",
+    "webpack-dev-server": "^1.14.0",
+    "yargs": "^3.31.0"
+  },
+  "scripts": {
+    "build": "gulp build --production",
+    "clean": "gulp clean",
+    "data/fetch": "node utils/fetch_data.js",
+    "deploy": "./utils/deploy.sh",
+    "scripts": "gulp scripts",
+    "serve": "gulp serve"
+  },
+  "dependencies": {
+    "desandro-classie": "^1.0.1"
+  }
+}

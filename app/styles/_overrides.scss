@@ -1,0 +1,52 @@
+// Sets border-box across the board
+html {
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// Gets rid of weird extra padding Firefox likes to add to <input>
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+hr {
+  border: 0;
+  border-top: $border-width solid $color-border;
+  margin-top: $gutter-double;
+  margin-bottom: $gutter-double;
+}
+
+.bar--thicker {
+  border-width: $border-width-double;
+}
+
+.bar--thin {
+  margin-top: $gutter-quarter;
+  margin-bottom: $gutter-quarter;
+}
+
+// Set some sane defaults
+body {
+  background-color: $color-white;
+  color: $color-text;
+  font-family: $font-sans-serif;
+}
+
+a {
+  color: $color-link;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

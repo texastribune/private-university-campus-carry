@@ -1,0 +1,61 @@
+// Colors
+$color-primary: hsl(0, 0%, 13%);
+$color-secondary: lighten($color-primary, 20%);
+
+$color-tribune: hsl(46, 100%, 56%);
+$color-republican: hsl(1, 64%, 56%);
+$color-democrat: hsl(203, 77%, 39%);
+$color-green: hsl(97, 48%, 60%);
+$color-white: hsl(0, 0%, 100%);
+$color-gray-light: hsl(0, 0%, 96%);
+$color-gray: hsl(0, 0%, 76%);
+$color-emily-gray: hsl(0, 0%, 53%);
+
+// Spacing
+$gutter: 1.25rem;
+
+$gutter-double: $gutter * 2;
+$gutter-quad: $gutter * 4;
+
+$gutter-half: $gutter / 2;
+$gutter-quarter: $gutter / 4;
+
+// Grid
+
+$grid-columns: 12;
+$grid-gutter: 1.25rem;
+
+// Borders
+$border-width: 1px;
+$border-width-double: $border-width * 2;
+$color-border: hsla(0, 0%, 0%, 0.1);
+
+// Typography
+$font-size-base: 16;
+
+$font-sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-serif: Georgia, 'Times New Roman', Times, serif;
+
+$color-text: $color-primary;
+$color-text-accent: $color-secondary;
+$color-text-inverse: $color-white;
+$color-link: hsl(183, 100%, 28%);
+
+// Buttons
+$btn-gutter-x: .375rem;
+$btn-gutter-y: 1rem;
+
+$btn-color-primary: $color-green;
+
+// sass-mq
+$mq-responsive: true;
+
+$mq-breakpoints: (
+  small-break: 544px,
+  medium-break: 768px,
+
+  menu-break: 606px,
+  footer-break: 900px
+);
+
+$mq-media-type: screen;
