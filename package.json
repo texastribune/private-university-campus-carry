@@ -46,6 +46,7 @@
     "clean": "gulp clean",
     "data/fetch": "node utils/fetch_data.js",
     "deploy": "./utils/deploy.sh",
+    "predeploy": "npm run build",
     "scripts": "gulp scripts",
     "serve": "gulp serve"
   },

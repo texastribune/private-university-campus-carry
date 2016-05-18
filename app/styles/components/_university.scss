@@ -56,6 +56,10 @@
 }
 
 .university__header--push {
+  margin-bottom: $gutter-double;
+}
+
+.university__header--smallpush {
   margin-bottom: $gutter;
 }
 
@@ -84,6 +88,10 @@
 
 .university__status--no {
   background-color: hsl(358, 69%, 41%);
+}
+
+.university__status--nowithcaveats {
+  background-color: hsl(33, 100%, 50%);
 }
 
 .university__status--undecided {
@@ -125,4 +133,11 @@
   &:before {
     content: '\2013\20';
   }
+}
+
+.university__caveats {
+  @include font-size(15);
+  color: $color-secondary;
+  line-height: 1.4;
+  margin-bottom: $gutter-double;
 }

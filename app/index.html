@@ -7,7 +7,7 @@
 <div class="container">
   <header class="header-container text-center">
     <h1 class="headline">{{ data.universities.META.title|widont }}</h1>
-    <p class="credit">By <a class="credit__author" href="http://www.texastribune.org/about/staff/matthew-watkins/">Matthew Watkins</a> and <a class="credit__author" href="http://www.texastribune.org/about/staff/ryan-murphy/">Ryan Murphy</a> | Last updated: April 1, 2016</p>
+    <p class="credit">By <a class="credit__author" href="http://www.texastribune.org/about/staff/matthew-watkins/">Matthew Watkins</a> and <a class="credit__author" href="http://www.texastribune.org/about/staff/ryan-murphy/">Ryan Murphy</a> | Last updated: May 18, 2016</p>
     <ul class="share-cells">
       <li class="share-cells__cell">
         <a class="share-cells__link" href="{{ twitter(data.PATH_FULL, 'Private schools have until 8/1 to decide whether to opt out of the campus carry law. Where each school stands:') }}"><img class="share-cells__icon" src="{{ data.PATH_PREFIX }}assets/images/twitter.svg" alt="Twitter"> Tweet</a>
@@ -48,11 +48,14 @@
   <section class="content">
   {% for university in data.universities.UNIVERSITIES %}
   <div class="university">
-    <header class="university__header {% if university.quote %}university__header--push{% endif %}" id="{{ university.university|slugify|lower }}">
+    <header class="university__header {% if university.quote and not university.caveats %}university__header--push{% elif university.caveats %}university__header--smallpush{% endif %}" id="{{ university.university|slugify|lower }}">
       <h2 class="university__name">{{ university.university }}</h2>
-      <p class="university__location">{{ university.city }}</p>
+      <p class="university__location">{{ university.city }}, TX</p>
       <p class="university__status university__status--{{ university.campus_carry_banned }}">{{ status(university.campus_carry_banned) }}</p>
     </header>
+    {% if university.caveats %}
+    <p class="university__caveats">{{ university.caveats }}</p>
+    {% endif %}
     {% if university.quote %}
     <blockquote class="university__blockquote">
       <p class="university__quote">{{ university.quote }}</p>
@@ -76,7 +79,7 @@
 
 <footer class="footer" role="contentinfo">
   <div class="container">
-    <div class="footer__copyright">&copy; 2015 <a class="footer__link" href="http://www.texastribune.org/">The Texas Tribune</a></div>
+    <div class="footer__copyright">&copy; 2016 <a class="footer__link" href="http://www.texastribune.org/">The Texas Tribune</a></div>
     <nav class="footer__nav">
       <ul>
         <li class="footer__nav-item"><a class="footer__link" href="http://www.texastribune.org/about/">About Us</a></li>

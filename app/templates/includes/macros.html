@@ -1,6 +1,8 @@
 {% macro status(value) %}
 {% if value == 'no' %}
 Will not allow campus carry
+{% elif value == 'nowithcaveats' %}
+No, with caveats
 {% elif value == 'yes' %}
 Will allow campus carry
 {% elif value == 'undecided' %}
